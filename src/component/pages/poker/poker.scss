@@ -1,0 +1,201 @@
+@import "../../../sass/_variables.scss";
+
+.card {
+  background-color: #1f1f2d;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  .title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+
+    .label {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .value {
+      color: $text-color;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .green {
+      color: $title-color;
+    }
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 12px;
+    background-color: #1e7e34;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #155d27;
+    }
+
+    @media (min-width: 700px) {
+      button {
+        flex: 1 1 calc(50% - 4px);
+      }
+    }
+  }
+
+  .rooms-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    button {
+      width: 100%;
+      padding: 10px 0;
+      margin-top: 12px;
+      background-color: #1e7e34;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      transition: background 0.3s;
+    }
+  }
+
+  .search-rates {
+    margin-top: 10px;
+
+    .rates-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+
+    .rates-category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      button {
+        width: 100%;
+        padding: 10px 0;
+        margin-top: 12px;
+        background-color: #1e7e34;
+        border-radius: 8px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.popular-rooms{
+  h2{
+    margin-bottom: 10px;
+  }
+  .card{
+    .content-rooms{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .content-icon{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .poker{
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          background-color: #9f6464;
+          border-radius: 50%;
+        }
+
+      }
+      .play button{
+        padding: 10px 20px;
+        background: #1e7e34;
+        color: $text-color;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  .game-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .players-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .players-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #8a94a6;
+  }
+  .online-count {
+    font-size: 14px;
+    color: #14c57c;
+  }
+
+  .propoker1 {
+    width: 200px;
+    height: 6px;
+    background-color: #2a3147;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .filpoker1 {
+    width: 40%;
+    height: 100%;
+    background-color: #14c57c;
+    border-radius: 3px;
+  }
+  .propoker{
+    width: 200px;
+    height: 6px;
+    background-color: #2a3147;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .filpoker{
+    width: 90%;
+    height: 100%;
+    background-color: #14c57c;
+    border-radius: 3px;
+  }
+}
+

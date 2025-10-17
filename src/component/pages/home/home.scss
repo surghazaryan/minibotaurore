@@ -1,0 +1,86 @@
+@import "../../../sass/_variables.scss";
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+
+  .home-title {
+    margin-top: 10px;
+
+    h3 {
+      color: $title-color;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      margin-bottom: 10px;
+    }
+  }
+
+  .balance-section {
+    background-color: #1e7e34;
+    padding: 20px;
+
+    .balance-content{
+
+      p{
+        color: black;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      h4{
+        color: $text-color;
+        font-size: 25px;
+        margin-bottom: 5px;
+      }
+     a{
+       display: flex;
+       gap: 20px;
+       button{
+         color: $text-color;
+         padding: 5px 30px;
+         background: $green-color;
+         border: none;
+         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+         opacity: 0.8;
+         border-radius: 5px;
+       }
+     }
+    }
+  }
+  .section-category {
+    .container-category {
+     margin-top: 30px;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        button {
+          flex: 1 1 calc(50% - 4px);
+          padding: 10px 0;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: bold;
+          background-color: #2b2b3a;
+          color: #fff;
+          transition: background 0.3s;
+
+          //&.active {
+          //  background-color: #1e7e34;
+          //}
+        }
+      }
+
+
+    }
+
+  }
+
+}
+

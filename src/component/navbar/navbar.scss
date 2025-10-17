@@ -1,0 +1,23 @@
+@import "../../sass/_variables.scss";
+
+.nav-bar{
+  ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li{
+      list-style: none;
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color:$text-color;
+        .nav-icon{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

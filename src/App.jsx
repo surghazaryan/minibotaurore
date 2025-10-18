@@ -5,7 +5,8 @@ import Layouts from "./component/layouts/Layouts.jsx";
 import MiniAppLogin from "./component/login/MiniAppLogin.jsx";
 import MiniAppRegister from "./component/registration/MiniAppRegister.jsx";
 import Home from "./component/pages/home/Home.jsx";
-import Blot from "./component/pages/blot/Blot.jsx";
+import Wallet from "./component/pages/wallet/Wallet.jsx";
+
 
 function App() {
     const routes = createBrowserRouter(
@@ -13,7 +14,8 @@ function App() {
             <Route path={ROUTES.LOGIN} element={<Layouts/>}>
                 <Route index element={<Home/>}/>
                 <Route path={ROUTES.REGISTRATION} element={<MiniAppRegister/>}/>
-                <Route path={"blot"} element={<Blot/>}/>
+                <Route path={ROUTES.WALLET} element={<Wallet/>}/>
+
             </Route>
         )
     )

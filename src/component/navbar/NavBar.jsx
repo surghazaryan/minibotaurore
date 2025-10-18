@@ -12,7 +12,7 @@ const NavBar = () => {
             <nav className={"nav-bar"}>
                 <ul>
                     <li><Link><IoMdHome className={"nav-icon"}/>Главная</Link></li>
-                    <li><Link><TbHistoryToggle className={"nav-icon"}/>Кошелок</Link></li>
+                    <li><Link to={"/wallet"}><TbHistoryToggle className={"nav-icon"}/>Кошелок</Link></li>
                     <li><Link><FaWallet className={"nav-icon"}/>История</Link></li>
                     <li><Link><HiUsers className={"nav-icon"}/>Рефералы</Link></li>
                     <li><Link><IoMdSettings className={"nav-icon"}/>Профиль</Link></li>

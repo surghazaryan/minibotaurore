@@ -1,0 +1,110 @@
+@import "../../../sass/_variables.scss";
+
+.wallet-content {
+  h3 {
+    color: $title-color;
+    margin-bottom: 6px;
+  }
+
+  .wallet-balance {
+    background: #1e7e34;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+
+    p:nth-child(1) {
+      color: black;
+      font-weight: bold;
+    }
+
+    p:nth-child(2) {
+      color: $text-color;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+
+  .wallet-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    button {
+      flex: 1;
+      border: none;
+      border-radius: 5px;
+     background: #1f1f2d;
+      color: $text-color;
+      padding: 10px;
+      &.active {
+        background: #1e7e34;
+      }
+    }
+  }
+  .account-replenishment{
+    background-color: #1f1f2d;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    p{
+      color: $text-color;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+   .wallet-form{
+     label{
+       color: #9c9ca1;
+       margin-bottom: 10px;
+     }
+     button{
+       border: none;
+       border-radius: 5px;
+       background: #1e7e34;
+       color: $text-color;
+       padding: 10px;
+       margin-top: 10px;
+       width: 100%;
+     }
+    .wallet-btn{
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      button{
+        flex: 1;
+        border: none;
+        border-radius: 5px;
+        background: #3c3c49;
+        color: $text-color;
+      }
+    }
+     .minimum-amount{
+       background: #643f13;
+       padding: 10px;
+       border-radius: 5px;
+       margin-top: 20px;
+       span{
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         color: goldenrod;
+         font-weight: bold;
+       }
+     }
+   }
+    .wallet-two-input{
+      margin-top: 20px;
+      input{
+        background: #090f21;
+        padding: 10px 12px 10px 38px;
+        outline: none;
+        border: none;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+        color: white;
+      }
+    }
+  }
+}

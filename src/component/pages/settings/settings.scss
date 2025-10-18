@@ -1,0 +1,169 @@
+@import "../../../sass/_variables.scss";
+
+.content-settings {
+  margin-top: 20px;
+
+  h3 {
+    color: $title-color;
+    margin-bottom: 10px;
+  }
+
+  .content-user {
+    .info-user {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #2b2b3a;
+
+      .user-icon {
+        color: $title-color;
+        font-size: 50px;
+      }
+
+      p {
+        color: $text-color;
+      }
+    }
+
+    .content-change {
+      margin-top: 20px;
+      background-color: #2b2b3a;
+      padding: 20px;
+
+      h4 {
+        color: $text-color;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      button {
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        background-color: #1e7e34;
+        padding: 10px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .pin-section {
+    margin-top: 20px;
+    background-color: #2b2b3a;
+    padding: 20px;
+    border-radius: 8px;
+
+    &.disabled {
+      opacity: 0.5;
+      border-color: #f0f0f0;
+
+      .pin-fields {
+        opacity: 0.6;
+        pointer-events: none;
+        user-select: none;
+      }
+    }
+
+    .checkbox-label {
+      span {
+        color: $text-color;
+        margin-bottom: 10px;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .set-pin-btn {
+    background-color: #1e7e34;
+    border: none;
+    color: $text-color;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+
+.checkbox-wrapper-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  span {
+    font-size: 20px;
+    color: $text-color;
+  }
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+  appearance: none;
+  background-color: #dfe1e4;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+
+.checkbox-wrapper-2 input[type=checkbox] {
+  cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+  background-color: #1e7e34;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+  background-color: #fff;
+  left: 13px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+  background-color: #1e7e34;
+}
+

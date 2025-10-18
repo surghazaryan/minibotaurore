@@ -12,9 +12,7 @@ const Home = () => {
     return (
         <div className={"size_container"}>
             <div className="home-wrapper">
-                <header>
-                    <NavBar/>
-                </header>
+                home
                 <main>
                     <div className="home-title">
                         <h3>Главная</h3>

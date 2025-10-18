@@ -1,0 +1,36 @@
+@import "../../../sass/_variables.scss";
+
+.content-history{
+  margin-top: 20px;
+  h3{
+    color: $title-color;
+    margin-bottom: 10px;
+  }
+  .history-card{
+    margin-top: 30px;
+    .card-history-sum{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f1f2d;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      p{
+        color: white;
+      }
+
+
+
+    }
+
+  }
+}
+.card-history-sum:nth-child(odd) h5 {
+  color: #1e7e34;
+}
+
+.card-history-sum:nth-child(even) h5 {
+  color: #dc3545;
+}

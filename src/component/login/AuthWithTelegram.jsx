@@ -32,7 +32,7 @@ const AuthWithTelegram = () => {
     return (
         <div>
             <button onClick={handleTelegram}>Մուտք Telegram-ով</button>
-            <pre>{JSON.stringify(unsafeData, null, 2)}</pre>
+           <p>{unsafeData}</p>
         </div>
     );
 };

@@ -81,6 +81,11 @@ import WebApp from '@twa-dev/sdk';
 
 const AuthWithTelegram =  () => {
     const initData = WebApp.initData;
+    const x = {
+        ...initData.user,
+        hash: initData.hash,
+        auth_date: initData.auth_date,
+    }
     const handleTelegram = async () => {
         const initData = WebApp.initData; // строка с подписью
         const user = WebApp.initDataUnsafe?.user;
@@ -107,6 +112,7 @@ const AuthWithTelegram =  () => {
     return (
         <div>
             <button onClick={handleTelegram}>Войти через Telegram</button>
+            <p>{JSON.stringify(x)}</p>
         </div>
     );
 };

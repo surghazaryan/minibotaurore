@@ -126,29 +126,38 @@ import WebApp from '@twa-dev/sdk';
 const AuthWithTelegram = () => {
 
     const handleTelegram = async () => {
-        const initData = WebApp.initData; // սա ստորագրված տողն է
-        const unsafeData = WebApp.initDataUnsafe; // սա object է
+        const unsafeData = WebApp.initDataUnsafe; // սա object տարբերակն է
         const user = unsafeData?.user;
 
-        if (!initData || !user) {
+        if (!unsafeData || !user) {
             alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
             return;
         }
 
-        try {
-            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', {
-                initData, // ուղարկում ենք ստորագրված տողը, որը backend-ը կարող է ստուգել
-            });
+        // սա այն օբյեկտն է, որը կուղարկենք backend-ին
+        const tgUser = {
+            id: user.id,
+            first_name: user.first_name,
+            last_name: user.last_name,
+            username: user.username,
+            language_code: user.language_code,
+            allows_write_to_pm: user.allows_write_to_pm,
+            photo_url: user.photo_url,
+            hash: unsafeData.hash,
+            auth_date: unsafeData.auth_date,
+        };
 
+        try {
+            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', tgUser);
             localStorage.setItem('token', res.data.token);
-            alert('Մուտքը հաջողվեց!');
+            alert('Մուտքը Telegram-ով հաջողվեց!');
         } catch (err) {
             console.error(err);
             alert('Սխալ՝ Telegram մուտքը ձախողվեց');
         }
     };
 
-    // տվյալների ցուցադրում (debug-ի համար)
+    // debug-ի համար
     const unsafeData = WebApp.initDataUnsafe;
     const x = {
         ...unsafeData?.user,

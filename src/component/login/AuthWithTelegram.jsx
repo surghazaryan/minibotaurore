@@ -7,20 +7,18 @@ const AuthWithTelegram = () => {
 
     const handleTelegram = async () => {
         const unsafeData = WebApp.initDataUnsafe;
-        const user = unsafeData?.user;
 
-        if (!unsafeData || !user) {
+        if (!unsafeData || !unsafeData.user) {
             alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
             return;
         }
 
+        // ուղարկում ենք backend hash վալիդացիայի համար initData query string
         const newPayload = {
-            initData: unsafeData
-
+            initData: WebApp.initData,          // hash verification
+            userData: unsafeData.user           // հարմարության համար
         };
 
-
-        // պահում ենք React state-ի մեջ
         setPayload(newPayload);
 
         try {

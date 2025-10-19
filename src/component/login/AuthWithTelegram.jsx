@@ -81,31 +81,32 @@ import WebApp from '@twa-dev/sdk';
 
 const AuthWithTelegram =  () => {
     const initData = WebApp.initData;
-    // const handleTelegram = async () => {
-    //     const initData = WebApp.initData; // строка с подписью
-    //     const user = WebApp.initDataUnsafe?.user;
-    //     alert(initData);
-    //     // if (!initData || !user) {
-    //     //     alert('Не удалось получить данные Telegram');
-    //     //     return;
-    //     // }
-    //
-    //     try {
-    //         const res = await axios.post('https://your-api-domain.com/api/auth/telegram', {
-    //             initData,
-    //         });
-    //         localStorage.setItem('token', res.data.token);
-    //         console.log('Успешная авторизация');
-    //     } catch (err) {
-    //         console.error(err);
-    //     }
-    // }
+    const handleTelegram = async () => {
+        const initData = WebApp.initData; // строка с подписью
+        const user = WebApp.initDataUnsafe?.user;
+
+        if (!initData || !user) {
+            alert('Не удалось получить данные Telegram');
+            return;
+        }
+
+        try {
+            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', {
+                ...initData.user,
+                hash: initData.hash,
+                auth_date: initData.auth_date,
+            });
+            localStorage.setItem('token', res.data.token);
+            console.log('Успешная авторизация');
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
 
     return (
         <div>
-            {/*<button onClick={handleTelegram}>Войти через Telegram</button>*/}
-            <p>{JSON.stringify(initData)}</p>
+            <button onClick={handleTelegram}>Войти через Telegram</button>
         </div>
     );
 };

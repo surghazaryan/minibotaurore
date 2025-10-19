@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {GiTrophyCup} from "react-icons/gi";
 import "./poker.scss";
 import {MdQuiz} from "react-icons/md";
 import {HiUsers} from "react-icons/hi2";
 import {RiUserFill} from "react-icons/ri";
+import Modal from "../../modal/Modal.jsx";
 
 const Poker = ({type}) => {
+    const [show, setShow] = useState(false)
+    const onShowModal = () => {
+        setShow(!show);
+    }
     return (
         <>
             {/* "Турниры" */}
@@ -69,7 +74,12 @@ const Poker = ({type}) => {
                             <div className="search-rates">
                                 <div className="rates-info">
                                     <p>Фильтр по ставкам</p>
-                                    <p><MdQuiz/>Как играть?</p>
+                                    <div onClick={onShowModal}>
+                                        <p><MdQuiz/>Как играть?</p>
+                                        {
+                                            show ? <Modal text={"poker"}/> : null
+                                        }
+                                    </div>
                                 </div>
                                 <div className="rates-category">
                                     <button>Все</button>

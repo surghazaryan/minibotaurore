@@ -14,15 +14,17 @@ import ProfileSettings from "./component/pages/settings/ProfileSettings.jsx";
 function App() {
     const routes = createBrowserRouter(
         createRoutesFromElements(
-            <Route path={ROUTES.LOGIN} element={<Layouts/>}>
+            <>
                 <Route index element={<MiniAppLogin/>}/>
                 <Route path={ROUTES.REGISTRATION} element={<MiniAppRegister/>}/>
-                <Route path={ROUTES.HOME} element={<Home/>}/>
-                <Route path={ROUTES.WALLET} element={<Wallet/>}/>
-                <Route path={ROUTES.HISTORY} element={<History/>}/>
-                <Route path={ROUTES.REFERRALS} element={<Referrals/>}/>
-                <Route path={ROUTES.PROFILESETTINGS} element={<ProfileSettings/>}/>
-            </Route>
+                <Route path={ROUTES.LOGIN} element={<Layouts/>}>
+                    <Route path={ROUTES.HOME} element={<Home/>}/>
+                    <Route path={ROUTES.WALLET} element={<Wallet/>}/>
+                    <Route path={ROUTES.HISTORY} element={<History/>}/>
+                    <Route path={ROUTES.REFERRALS} element={<Referrals/>}/>
+                    <Route path={ROUTES.PROFILESETTINGS} element={<ProfileSettings/>}/>
+                </Route>
+            </>
         )
     )
 

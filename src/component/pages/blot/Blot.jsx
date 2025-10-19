@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {GiTrophyCup} from "react-icons/gi";
 import {MdQuiz} from "react-icons/md";
 import {IoFolderOpenSharp} from "react-icons/io5";
 import {HiUsers} from "react-icons/hi2";
 import "./blot.scss";
+import Modal from "../../modal/Modal.jsx";
 
 const Blot = ({type}) => {
+    const [show, setShow] = useState(false)
+    const onShowModal = () => {
+        setShow(!show);
+    }
     return (
         <>
             {/*  "Турниры" */}
@@ -70,7 +75,12 @@ const Blot = ({type}) => {
                             <div className="search-rates">
                                 <div className="rates-info">
                                     <p>Фильтр по ставкам</p>
-                                    <p><MdQuiz/>Как играть?</p>
+                                    <div onClick={onShowModal}>
+                                        <p><MdQuiz/>Как играть?</p>
+                                        {
+                                            show ? <Modal text={'blot'}/> : null
+                                        }
+                                    </div>
                                 </div>
                                 <div className="rates-category">
                                     <button>Все</button>

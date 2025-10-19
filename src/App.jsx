@@ -2,20 +2,21 @@ import './App.css'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
 import {ROUTES} from "./component/routes/index.js";
 import Layouts from "./component/layouts/Layouts.jsx";
-import MiniAppLogin from "./component/login/MiniAppLogin.jsx";
+
 import MiniAppRegister from "./component/registration/MiniAppRegister.jsx";
 import Home from "./component/pages/home/Home.jsx";
 import Wallet from "./component/pages/wallet/Wallet.jsx";
 import History from "./component/pages/history/History.jsx";
 import Referrals from "./component/pages/referrals/Referrals.jsx";
 import ProfileSettings from "./component/pages/settings/ProfileSettings.jsx";
+import AuthWithTelegram from "./component/login/AuthWithTelegram.jsx";
 
 
 function App() {
     const routes = createBrowserRouter(
         createRoutesFromElements(
             <>
-                <Route index element={<authWithTelegram/>}/>
+                <Route index element={<AuthWithTelegram/>}/>
                 <Route path={ROUTES.REGISTRATION} element={<MiniAppRegister/>}/>
                 <Route path={ROUTES.LOGIN} element={<Layouts/>}>
                     <Route path={ROUTES.HOME} element={<Home/>}/>

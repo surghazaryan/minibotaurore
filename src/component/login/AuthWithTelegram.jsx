@@ -74,15 +74,17 @@
 // };
 //
 // export default MiniAppLogin;
-
-import axios from 'axios';
+//
+import React from 'react';
+import axios from "axios";
 import WebApp from '@twa-dev/sdk';
 
-async function AuthWithTelegram() {
-    const initData = WebApp.initData; // строка с подписью
-    const user = WebApp.initDataUnsafe?.user;
+const AuthWithTelegram =  () => {
 
     const handleTelegram = async () => {
+        const initData = WebApp.initData; // строка с подписью
+        const user = WebApp.initDataUnsafe?.user;
+
         if (!initData || !user) {
             alert('Не удалось получить данные Telegram');
             return;
@@ -98,12 +100,16 @@ async function AuthWithTelegram() {
             console.error(err);
         }
     }
+    // if (!initData || !user) {
+    //     alert('Не удалось получить данные Telegram');
+    //     return;
+    // }
 
-    return(
-        <>
+    return (
+        <div>
             <button onClick={handleTelegram}>Войти через Telegram</button>
-        </>
-    )
-}
+        </div>
+    );
+};
 
-export default AuthWithTelegram();
+export default AuthWithTelegram;

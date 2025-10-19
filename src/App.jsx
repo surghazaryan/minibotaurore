@@ -15,7 +15,7 @@ function App() {
     const routes = createBrowserRouter(
         createRoutesFromElements(
             <>
-                <Route index element={<MiniAppLogin/>}/>
+                <Route index element={<authWithTelegram/>}/>
                 <Route path={ROUTES.REGISTRATION} element={<MiniAppRegister/>}/>
                 <Route path={ROUTES.LOGIN} element={<Layouts/>}>
                     <Route path={ROUTES.HOME} element={<Home/>}/>

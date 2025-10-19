@@ -7,14 +7,13 @@ const AuthWithTelegram = () => {
     const handleTelegram = async () => {
         const unsafeData = WebApp.initDataUnsafe;
         const user = unsafeData?.user;
-        console.log(user)
         if (!unsafeData || !user) {
             alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
             return;
         }
 
         try {
-            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', { ...user });
+            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', unsafeData);
             localStorage.setItem('token', res.data.token);
             alert('Մուտքը Telegram-ով հաջողվեց!');
         } catch (err) {
@@ -24,16 +23,16 @@ const AuthWithTelegram = () => {
     };
 
     const unsafeData = WebApp.initDataUnsafe;
-    const x = {
-        ...unsafeData?.user,
-        hash: unsafeData?.hash,
-        auth_date: unsafeData?.auth_date,
-    };
+    // const x = {
+    //     ...unsafeData?.user,
+    //     hash: unsafeData?.hash,
+    //     auth_date: unsafeData?.auth_date,
+    // };
 
     return (
         <div>
             <button onClick={handleTelegram}>Մուտք Telegram-ով</button>
-            <pre>{JSON.stringify(x, null, 2)}</pre>
+            <pre>{JSON.stringify(unsafeData, null, 2)}</pre>
         </div>
     );
 };

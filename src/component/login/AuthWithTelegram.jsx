@@ -23,16 +23,16 @@ const AuthWithTelegram = () => {
     };
 
     const unsafeData = WebApp.initDataUnsafe;
-    const x = {
-        ...unsafeData?.user,
-        hash: unsafeData?.hash,
-        auth_date: unsafeData?.auth_date,
-    };
+    // const x = {
+    //     ...unsafeData?.user,
+    //     hash: unsafeData?.hash,
+    //     auth_date: unsafeData?.auth_date,
+    // };
 
     return (
         <div>
             <button onClick={handleTelegram}>Մուտք Telegram-ով</button>
-            <pre>{JSON.stringify(x, null, 2)}</pre>
+            <pre>{JSON.stringify(unsafeData, null, 2)}</pre>
         </div>
     );
 };

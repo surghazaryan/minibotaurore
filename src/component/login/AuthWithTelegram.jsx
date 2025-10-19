@@ -13,7 +13,11 @@ const AuthWithTelegram = () => {
         }
 
         try {
-            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', unsafeData);
+            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', {
+                ...unsafeData.user,
+                hash: unsafeData.hash,
+                auth_date: unsafeData.auth_date
+            });
             localStorage.setItem('token', res.data.token);
             alert('Մուտքը Telegram-ով հաջողվեց!');
         } catch (err) {

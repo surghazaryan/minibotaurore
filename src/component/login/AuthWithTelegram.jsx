@@ -3,7 +3,7 @@ import axios from "axios";
 import WebApp from '@twa-dev/sdk';
 
 const AuthWithTelegram = () => {
-
+let paylaod;
     const handleTelegram = async () => {
         const unsafeData = WebApp.initDataUnsafe;
         const user = unsafeData?.user;
@@ -11,13 +11,13 @@ const AuthWithTelegram = () => {
             alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
             return;
         }
-
+        paylaod = {
+            ...unsafeData.user,
+            hash: unsafeData.hash,
+            auth_date: unsafeData.auth_date
+        }
         try {
-            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', {
-                ...unsafeData.user,
-                hash: unsafeData.hash,
-                auth_date: unsafeData.auth_date
-            });
+            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', paylaod);
             localStorage.setItem('token', res.data.token);
             alert('Մուտքը Telegram-ով հաջողվեց!');
         } catch (err) {
@@ -26,7 +26,7 @@ const AuthWithTelegram = () => {
         }
     };
 
-    const unsafeData = WebApp.initDataUnsafe;
+    // const unsafeData = WebApp.initDataUnsafe;
     // const x = {
     //     ...unsafeData?.user,
     //     hash: unsafeData?.hash,
@@ -36,7 +36,7 @@ const AuthWithTelegram = () => {
     return (
         <div>
             <button onClick={handleTelegram}>Մուտք Telegram-ով</button>
-            <pre>{JSON.stringify(unsafeData, null, 2)}</pre>
+            <pre>{JSON.stringify(paylaod, null, 2)}</pre>
         </div>
     );
 };

@@ -1,44 +1,155 @@
-import React, { useState } from 'react';
-import axios from "axios";
+// import React, {useEffect, useState} from 'react';
+// import axios from "axios";
+// import WebApp from '@twa-dev/sdk';
+// import {motion} from "framer-motion";
+// import "./login.scss"
+// import {Loader2} from "lucide-react";
+//
+// const AuthWithTelegram = () => {
+//
+//     // const handleTelegram = async () => {
+//     //     const unsafeData = WebApp.initDataUnsafe;
+//     //
+//     //     if (!unsafeData || !unsafeData.user) {
+//     //         alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
+//     //         return;
+//     //     }
+//     //
+//     //
+//     //     const newPayload = {
+//     //         initData: WebApp.initData,
+//     //         userData: unsafeData.user
+//     //     };
+//     //
+//     //
+//     //
+//     //     try {
+//     //         const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload);
+//     //
+//     //         alert('Մուտքը Telegram-ով հաջողվեց!');
+//     //     } catch (err) {
+//     //         console.error(err);
+//     //         alert('Սխալ՝ Telegram մուտքը ձախողվեց');
+//     //     }
+//     // };
+//
+//     const [loading, setLoading] = useState(true)
+//     const [error, setError] = useState(null)
+//
+//     useEffect(() => {
+//         const authenticate = async () => {
+//             const unsafeData = WebApp.initDataUnsafe;
+//             if (!unsafeData || !unsafeData.user) {
+//                 setError('Չհաջողվեց ստանալ Telegram-ի տվյալները');
+//                 setLoading(false)
+//             }
+//             const newPayload = {
+//                 initData: WebApp.initData,
+//                 userData: unsafeData.user
+//             };
+//             try {
+//                 const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload)
+//
+//             }catch(err) {
+//                 console.log(err)
+//             }finally {
+//                 setLoading(false)
+//             }
+//         }
+//         authenticate()
+//     }, []);
+//
+//     return (
+//         <div className="auth-loader">
+//             <motion.div
+//                 className="loader-icon"
+//                 animate={{rotate: 360}}
+//                 transition={{repeat: Infinity, duration: 1.5, ease: "linear"}}
+//             >
+//                 <Loader2 size={60}/>
+//             </motion.div>
+//
+//             <motion.h1
+//                 className="loader-title"
+//                 initial={{opacity: 0}}
+//                 animate={{opacity: 1}}
+//                 transition={{duration: 1.5}}
+//             >
+//                 Welcome to Aurore Casino
+//             </motion.h1>
+//
+//             <p className="loader-text">Please Wait...</p>
+//         </div>
+//
+//
+//     );
+// };
+//
+// export default AuthWithTelegram;
+
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { motion } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
 import WebApp from '@twa-dev/sdk';
+import "./login.scss"
 
 const AuthWithTelegram = () => {
-    const [payload, setPayload] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const handleTelegram = async () => {
-        const unsafeData = WebApp.initDataUnsafe;
 
-        if (!unsafeData || !unsafeData.user) {
-            alert('Չհաջողվեց ստանալ Telegram-ի տվյալները');
-            return;
-        }
+    useEffect(() => {
+        const authenticate = async () => {
+            const unsafeData = WebApp.initDataUnsafe;
 
-        // ուղարկում ենք backend hash վալիդացիայի համար initData query string
-        const newPayload = {
-            initData: WebApp.initData,          // hash verification
-            userData: unsafeData.user           // հարմարության համար
+            if (!unsafeData || !unsafeData.user) {
+                setError('Չհաջողվեց ստանալ Telegram-ի տվյալները');
+                setLoading(false);
+                return;
+            }
+
+            const newPayload = {
+                initData: WebApp.initData,
+                userData: unsafeData.user,
+            };
+
+            try {
+                const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload);
+
+
+            } catch (err) {
+                console.error(err);
+                setError('Սերվերի սխալ կամ կապի խնդիր');
+            } finally {
+                setLoading(false);
+            }
         };
 
-        setPayload(newPayload);
+        authenticate();
+    }, []);
 
-        try {
-            const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload);
-            localStorage.setItem('token', res.data.token);
-            alert('Մուտքը Telegram-ով հաջողվեց!');
-        } catch (err) {
-            console.error(err);
-            alert('Սխալ՝ Telegram մուտքը ձախողվեց');
-        }
-    };
+    if (loading) {
+        return (
+            <div className="auth-loader">
+                <motion.div
+                    className="loader-icon"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                >
+                    <Loader2 size={60} />
+                </motion.div>
+                <p className="loader-text">Please Wait...</p>
+            </div>
+        );
+    }
 
-    return (
-        <div style={{ padding: '1rem' }}>
-            <button onClick={handleTelegram}>Մուտք Telegram-ով</button>
-            <pre style={{ background: '#eee', padding: '10px', borderRadius: '8px' }}>
-                {JSON.stringify(payload, null, 2)}
-            </pre>
-        </div>
-    );
+    if (error) {
+        return <div className="error">{error}</div>;
+    }
+
+    return null;
 };
 
 export default AuthWithTelegram;

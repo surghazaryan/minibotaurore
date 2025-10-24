@@ -1,27 +1,29 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Field, Form, Formik} from "formik";
+import {LanguageContext} from "../../../context/LngProviderContext.jsx";
 
 const Withdraw = () => {
+    const {t} = useContext(LanguageContext);
     return (
         <>
             <div className="account-replenishment">
-                <p>Вывод средств</p>
+                <p>{t.withdrawFunds}</p>
                 <Formik>
                     <Form className={'wallet-form'}>
                         <div className="field-container">
-                            <label htmlFor="amount" >Сумма USDT</label>
+                            <label htmlFor="amount" >{t.amountUSDT}</label>
                             <Field type={"text"} id={"amount"} placeholder={"0.00"}/>
-                            <p>Доступно: 5000</p>
+                            <p>{t.available}: 5000</p>
                         </div>
 
                         <div className={"wallet-two-input"}>
-                            <label htmlFor="adress">Адрес кошелика</label>
-                            <Field type={"text"} placeholder={"Введите адрес..."} id={"adress"}/>
+                            <label htmlFor="adress">{t.walletAddressWithdraw}</label>
+                            <Field type={"text"} placeholder={t.enterAddress} id={"adress"}/>
                         </div>
                         <div className="minimum-amount">
-                            <span>Минимальная сумма вывода:Комиссия сети:1 USDT</span>
+                            <span>{t.minWithdraw}:{t.networkFee}:1 USDT</span>
                         </div>
-                        <button>Вывести средства</button>
+                        <button>{t.withdrawButton}</button>
                     </Form>
 
                 </Formik>

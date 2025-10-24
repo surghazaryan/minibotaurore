@@ -46,11 +46,10 @@
     font-weight: bold;
     cursor: pointer;
     color: #fff;
-    transition: background 0.3s;
+    transition: all 0.3s
+    cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-      background-color: #155d27;
-    }
+
 
     @media (min-width: 700px) {
       button {
@@ -178,7 +177,7 @@
   .progress-fill {
     width: 80%;
     height: 100%;
-    background-color: #14c57c;
+    background-image: linear-gradient(#42258d, #6e55c9);
     border-radius: 3px;
   }
   .otherprogress{

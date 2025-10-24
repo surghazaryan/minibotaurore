@@ -1,30 +1,56 @@
-import React, {useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import NavBar from "../../navbar/NavBar.jsx";
 import "./home.scss"
 import {Link, Outlet} from "react-router-dom";
 import {GiTrophyCup} from "react-icons/gi";
+import { FaRegUserCircle } from "react-icons/fa";
 import Blot from "../blot/Blot.jsx";
 import Poker from "../poker/Poker.jsx";
+import {LanguageContext} from "../../../context/LngProviderContext.jsx";
+import BalanceHeader from "../../balanceHeader/BalanceHeader.jsx";
+
 
 const Home = () => {
     const [selectedGame, setSelectedGame] = useState(null);
     const [selectedTab, setSelectedTab] = useState(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+    const {t} = useContext(LanguageContext)
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 700);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const handleGameSelect = (game) => {
+        setSelectedGame(game);
+        if (isMobile) {
+            setSelectedTab(null);
+        } else {
+            setSelectedTab("rooms");
+        }
+    };
+
     return (
         <div className={"size_container"}>
             <div className="home-wrapper">
-                home
                 <main>
                     <div className="home-title">
-                        <h3>Главная</h3>
-                        <hr/>
+                       <div>
+                           <h3>{t.homeTitle}</h3>
+                           <hr />
+                       </div>
+                      <BalanceHeader/>
                     </div>
                     <section className={"balance-section"}>
                         <div className="balance-content">
-                            <p>Ваш баланс</p>
-                            <h4>1000 USDT</h4>
+                            <p>{t.yourBalance}</p>
+                            <h4>{t.balanceAmount}</h4>
                             <Link>
-                                <button>Пополнить</button>
-                                <button>Вывести</button>
+                                <button>{t.deposit}</button>
+                                <button>{t.withdraw}</button>
                             </Link>
                         </div>
                     </section>
@@ -33,35 +59,28 @@ const Home = () => {
                             <div className="tabs">
                                 <button
                                     className={selectedGame === "poker" ? "active" : ""}
-                                    onClick={() => {
-                                        setSelectedGame("poker");
-                                        setSelectedTab(null)
-                                    }}>Покер
+                                    onClick={() => handleGameSelect("poker")}> {t.poker}
                                 </button>
                                 <button
                                     className={selectedGame === "blot" ? "active" : ""}
-                                    onClick={() => {
-                                        setSelectedGame("blot");
-                                        setSelectedTab(null)
-                                    }}>Блот
+                                    onClick={() => handleGameSelect("blot")}>{t.blot}
                                 </button>
-                                {
-                                    selectedGame &&
+                                {selectedGame && isMobile && (
                                     <>
                                         <button
                                             className={selectedTab === "rooms" ? "active" : ""}
-                                            onClick={() => {
-                                                setSelectedTab("rooms")
-                                            }}>Комнаты
+                                            onClick={() => setSelectedTab("rooms")}
+                                        >
+                                            {t.rooms}
                                         </button>
                                         <button
                                             className={selectedTab === "tournaments" ? "active" : ""}
-                                            onClick={() => {
-                                                setSelectedTab("tournaments")
-                                            }}>Турниры
+                                            onClick={() => setSelectedTab("tournaments")}
+                                        >
+                                            {t.tournaments}
                                         </button>
                                     </>
-                                }
+                                )}
 
                             </div>
                             {selectedGame === "poker" && selectedTab === "rooms" && (
@@ -84,7 +103,8 @@ const Home = () => {
                             }
                             {
                                 !selectedTab && selectedGame && (
-                                    <p>Выберите: Комнаты или Турниры</p>
+                                    // <p>Выберите: Комнаты или Турниры</p>
+                                    <p>{t.selectOption}</p>
                                 )
                             }
                         </div>

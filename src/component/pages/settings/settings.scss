@@ -3,39 +3,85 @@
 .content-settings {
   margin-top: 20px;
 
+
+.setting-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   h3 {
     color: $title-color;
     margin-bottom: 10px;
   }
+}
 
   .content-user {
     .info-user {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       margin-top: 20px;
       gap: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      background-color: #2b2b3a;
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      .title-user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
 
-      .user-icon {
-        color: $title-color;
-        font-size: 50px;
+        .user-icon {
+          color: $primary-cyan;
+          font-size: 50px;
+        }
       }
+
 
       p {
         color: $text-color;
       }
+
+      .btn-lng {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          background: transparent;
+          padding: 5px 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+
+          &.active {
+            background: #1f1f2d;
+          }
+        }
+      }
     }
 
     .content-change {
+
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
       margin-top: 20px;
-      background-color: #2b2b3a;
-      padding: 20px;
+
 
       h4 {
-        color: $text-color;
+        color: $primary-cyan;
         margin-bottom: 10px;
         font-size: 20px;
         font-weight: bold;
@@ -43,21 +89,37 @@
 
       button {
         width: 100%;
-        border: none;
-        border-radius: 5px;
-        background-color: #1e7e34;
-        padding: 10px;
-        color: #ffffff;
+        padding: 14px 40px;
+        background: transparent;
+        border: 2px solid #00ffff;
+        border-radius: 12px;
+        color: #00ffff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.4s
+        cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
     }
   }
 
   .pin-section {
+    background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: all 0.4s
+    cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 20px;
-    background-color: #2b2b3a;
-    padding: 20px;
-    border-radius: 8px;
-
+h3{
+  color: $primary-cyan;
+}
     &.disabled {
       opacity: 0.5;
       border-color: #f0f0f0;
@@ -82,13 +144,39 @@
   }
 
   .set-pin-btn {
-    background-color: #1e7e34;
-    border: none;
-    color: $text-color;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 14px 40px;
+    background: transparent;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    color: #00ffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.4s
+    cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     width: 100%;
   }
+
+  .content-logout {
+    .btn-logOut {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+      margin-top: 10px;
+      color: red;
+      border: none;
+      background-color: #343442;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  }
+
 }
 
 

@@ -10,6 +10,7 @@ import History from "./component/pages/history/History.jsx";
 import Referrals from "./component/pages/referrals/Referrals.jsx";
 import ProfileSettings from "./component/pages/settings/ProfileSettings.jsx";
 import AuthWithTelegram from "./component/login/AuthWithTelegram.jsx";
+import Tournament from "./component/pages/tournament/Tournament.jsx";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path={ROUTES.REGISTRATION} element={<MiniAppRegister/>}/>
                 <Route path={ROUTES.LOGIN} element={<Layouts/>}>
                     <Route path={ROUTES.HOME} element={<Home/>}/>
+                    <Route path={ROUTES.TOURNAMENTS} element={<Tournament/>}/>
                     <Route path={ROUTES.WALLET} element={<Wallet/>}/>
                     <Route path={ROUTES.HISTORY} element={<History/>}/>
                     <Route path={ROUTES.REFERRALS} element={<Referrals/>}/>

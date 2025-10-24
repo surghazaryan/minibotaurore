@@ -5,15 +5,24 @@
     color: $title-color;
     margin-bottom: 6px;
   }
+  .wallet-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
 
   .wallet-balance {
-    background: #1e7e34;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(0, 50, 50, 0.2), rgba(50, 0, 50, 0.2));
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
     p:nth-child(1) {
-      color: black;
+      color: $primary-cyan;
       font-weight: bold;
     }
 
@@ -30,23 +39,37 @@
     gap: 10px;
     margin-top: 20px;
     button {
-      flex: 1;
-      border: none;
-      border-radius: 5px;
-     background: #1f1f2d;
-      color: $text-color;
-      padding: 10px;
+      flex: 1 1 calc(50% - 4px);
+      padding: 18px;
+      text-align: center;
+      background: rgba(0, 255, 255, 0.05);
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      color: white;
       &.active {
-        background: #1e7e34;
+        background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+        border-color: $primary-cyan;
+        color: $primary-cyan;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), inset 0 0 20px rgba(0, 255, 255, 0.1);
       }
     }
   }
   .account-replenishment{
-    background-color: #1f1f2d;
-    border-radius: 12px;
-    padding: 16px;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: all 0.4s
+    cubic-bezier(0.4, 0, 0.2, 1);
     p{
       color: $text-color;
       font-weight: bold;
@@ -59,11 +82,20 @@
        margin-bottom: 10px;
      }
      button{
-       border: none;
-       border-radius: 5px;
-       background: #1e7e34;
-       color: $text-color;
-       padding: 10px;
+       padding: 14px 40px;
+       background: transparent;
+       border: 2px solid #00ffff;
+       border-radius: 12px;
+       color: #00ffff;
+       cursor: pointer;
+       font-size: 16px;
+       font-weight: 600;
+       transition: all 0.4s
+       cubic-bezier(0.4, 0, 0.2, 1);
+       position: relative;
+       overflow: hidden;
+       text-transform: uppercase;
+       letter-spacing: 1px;
        margin-top: 10px;
        width: 100%;
      }
@@ -72,23 +104,37 @@
       justify-content: space-between;
       gap: 10px;
       button{
-        flex: 1;
-        border: none;
-        border-radius: 5px;
-        background: #3c3c49;
-        color: $text-color;
+        flex: 1 1 calc(50% - 4px);
+        padding: 18px;
+        text-align: center;
+        background: rgba(0, 255, 255, 0.05);
+        border: 2px solid rgba(0, 255, 255, 0.2);
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.4s
+        cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        color: white;
       }
     }
      .minimum-amount{
-       background: #643f13;
-       padding: 10px;
-       border-radius: 5px;
+       background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+       backdrop-filter: blur(10px);
+       border: 2px solid rgba(138, 43, 226, 0.3);
+       border-radius: 20px;
+       padding: 30px;
+       margin-bottom: 20px;
+       transition: all 0.4s
+       cubic-bezier(0.4, 0, 0.2, 1);
        margin-top: 20px;
        span{
          display: inline-flex;
          justify-content: center;
          align-items: center;
-         color: goldenrod;
+         color: $primary-cyan;
          font-weight: bold;
        }
      }

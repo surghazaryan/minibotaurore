@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {GiTrophyCup} from "react-icons/gi";
 import {MdQuiz} from "react-icons/md";
 import {IoFolderOpenSharp} from "react-icons/io5";
 import {HiUsers} from "react-icons/hi2";
 import "./blot.scss";
 import Modal from "../../modal/Modal.jsx";
+import {LanguageContext} from "../../../context/LngProviderContext.jsx";
 
 const Blot = ({type}) => {
+    const {t} = useContext(LanguageContext);
     const [show, setShow] = useState(false)
     const onShowModal = () => {
         setShow(!show);
@@ -17,45 +19,45 @@ const Blot = ({type}) => {
             {type === "tournaments" && (
                 <>
                     <div className="card">
-                        <div className="title">Чемпионат блота</div>
+                        <div className="title">{t.blotChampionship}</div>
                         <div className="info">
-                            <span className="green">Призовой фонд</span>
+                            <span className="green">{t.prizeFund}</span>
                             <span className="green"><GiTrophyCup/>3000 USDT</span>
                         </div>
                         <div className="info">
-                            <span className="label">Взнос</span>
+                            <span className="label">{t.fee}</span>
                             <span className="value">30 USDT</span>
                         </div>
                         <div className="info">
-                            <span className="label">Игроков</span>
+                            <span className="label">{t.players}</span>
                             <span className="value">32/64</span>
                         </div>
                         <div className="info">
-                            <span className="label">Начало через</span>
+                            <span className="label">{t.startsIn}</span>
                             <span className="value">5ч 15м</span>
                         </div>
-                        <button className="button">Участвовать</button>
+                        <button className="button">{t.participate}</button>
                     </div>
 
                     <div className="card">
-                        <div className="title">Кубок месяца</div>
+                        <div className="title">{t.cupOfMonth}</div>
                         <div className="info">
-                            <span className="green">Призовой фонд</span>
+                            <span className="green">{t.prizeFund}</span>
                             <span className="green"><GiTrophyCup/>10000 USDT</span>
                         </div>
                         <div className="info">
-                            <span className="label">Взнос</span>
+                            <span className="label">{t.fee}</span>
                             <span className="value">100 USDT</span>
                         </div>
                         <div className="info">
-                            <span className="label">Игроков</span>
+                            <span className="label">{t.players}</span>
                             <span className="value">120/150</span>
                         </div>
                         <div className="info">
-                            <span className="label">Начало через</span>
+                            <span className="label">{t.startsIn}</span>
                             <span className="value">3д 12ч</span>
                         </div>
-                        <button className="button">Участвовать</button>
+                        <button className="button">{t.participate}</button>
                     </div>
                 </>
             )}
@@ -66,36 +68,36 @@ const Blot = ({type}) => {
                     <div className="card">
                         <div className="tips">
                             <div className="rooms-title">
-                                <p>Типы блота</p>
+                                <p>{t.blotTypes}</p>
                             </div>
                             <div className="rooms-btn">
-                                <button>2 из 2</button>
-                                <button>Открытый Блот</button>
+                                <button>{t.twoOfTwo}</button>
+                                <button>{t.openBlot}</button>
                             </div>
                             <div className="search-rates">
                                 <div className="rates-info">
                                     <p>Фильтр по ставкам</p>
                                     <div onClick={onShowModal}>
-                                        <p><MdQuiz/>Как играть?</p>
+                                        <p><MdQuiz/>{t.howToPlay}</p>
                                         {
                                             show ? <Modal text={'blot'}/> : null
                                         }
                                     </div>
                                 </div>
                                 <div className="rates-category">
-                                    <button>Все</button>
-                                    <button>Низкие</button>
-                                    <button>Средние</button>
-                                    <button>Высокие</button>
+                                    <button>{t.all}</button>
+                                    <button>{t.low}</button>
+                                    <button>{t.medium}</button>
+                                    <button>{t.high}</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="popular-rooms">
-                        <h2>Популярные комнаты</h2>
+                        <h2>{t.popularRooms}</h2>
 
-                        <div className="card">
+                        <div className="popular-rooms-card">
                             <div className="content-rooms">
                                 <div className="content-icon">
                                     <div className="icon"><IoFolderOpenSharp/></div>
@@ -105,7 +107,7 @@ const Blot = ({type}) => {
                                     </div>
                                 </div>
                                 <div className="play">
-                                    <button>Играть</button>
+                                    <button>{t.play}</button>
                                 </div>
                             </div>
                             <div className="game-details">
@@ -119,7 +121,7 @@ const Blot = ({type}) => {
                             </div>
                         </div>
 
-                        <div className="card">
+                        <div className="popular-rooms-card">
                             <div className="content-rooms">
                                 <div className="content-icon">
                                     <div className="icon"><IoFolderOpenSharp/></div>
@@ -129,7 +131,7 @@ const Blot = ({type}) => {
                                     </div>
                                 </div>
                                 <div className="play">
-                                    <button>Играть</button>
+                                    <button>{t.play}</button>
                                 </div>
                             </div>
                             <div className="game-details">

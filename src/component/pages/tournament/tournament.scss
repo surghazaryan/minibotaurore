@@ -1,0 +1,55 @@
+@import "../../../sass/_variables.scss";
+
+
+.section-tournament {
+  h3{
+    color: $title-color;
+  }
+  .tournament-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .container-tournament {
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+
+    .tabs-tournament {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+
+      button {
+        flex: 1 1 calc(50% - 4px);
+        padding: 18px;
+        text-align: center;
+        background: rgba(0, 255, 255, 0.05);
+        border: 2px solid rgba(0, 255, 255, 0.2);
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.4s
+        cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        color: white;
+
+        &.active {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+          border-color: var(--primary-cyan);
+          box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+

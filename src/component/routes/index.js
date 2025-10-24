@@ -3,7 +3,8 @@ export const ROUTES  = {
     HOME:'/home',
     REGISTRATION:'/registration',
     WALLET:'/wallet',
-    HISTORY:"history",
-    REFERRALS:"referrals",
-    PROFILESETTINGS:"profileSettings",
+    HISTORY:"/history",
+    REFERRALS:"/referrals",
+    PROFILESETTINGS:"/profileSettings",
+    TOURNAMENTS:"/tournaments",
 }

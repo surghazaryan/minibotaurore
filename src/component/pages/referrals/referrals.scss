@@ -1,16 +1,21 @@
+@import "../../../sass/_variables.scss";
+
 .referrals-page {
-  background-color: #0e0e16;
   color: #fff;
-  padding: 24px;
   font-family: "Inter", sans-serif;
   min-height: 100vh;
 
-  h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
+.referrals-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  h3 {
+    margin-bottom: 10px;
+    color:$title-color ;
   }
 
+}
   .ref-card {
     background-color: #1f1f2d;
     border-radius: 12px;
@@ -19,17 +24,32 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
     &.main {
-      background: linear-gradient(135deg, #2ebf6b, #1e7e34);
-      color: white;
-      text-align: center;
-
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 20px;
       h1 {
         font-size: 32px;
         margin: 8px 0;
+        color: $primary-cyan;
       }
     }
 
     &.link {
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 20px;
       .ref-link-box {
         display: flex;
         justify-content: space-between;
@@ -40,7 +60,7 @@
         margin-top: 8px;
 
         p {
-          color: #1fbf6b;
+          color: $primary-cyan;
           font-size: 14px;
           overflow-wrap: anywhere;
         }
@@ -52,7 +72,7 @@
           color: white;
           font-size: 20px;
           .copy-icon{
-            color: #1e7e34;
+            color: $primary-cyan;
           }
         }
       }
@@ -79,6 +99,18 @@
     }
 
     &.conditions {
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 20px;
+      h3{
+        color: $primary-cyan;
+      }
       ul {
         list-style: none;
         padding: 0;
@@ -94,6 +126,15 @@
     }
 
     &.activity {
+      background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(138, 43, 226, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s
+      cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 20px;
       .ref-row {
         display: flex;
         justify-content: space-between;
@@ -102,6 +143,7 @@
         border-radius: 10px;
         padding: 12px 14px;
         margin-top: 10px;
+
 
         div p {
           font-weight: 500;
@@ -114,7 +156,7 @@
         }
 
         h5 {
-          color: #1e7e34;
+          color: $primary-cyan;
           font-size: 16px;
         }
       }
@@ -127,19 +169,20 @@
     align-items: center;
     gap: 5px;
     width: 100%;
-    background-color: #1e7e34;
-    color: #fff;
-    border: none;
     border-radius: 12px;
     padding: 12px;
     font-weight: 600;
     font-size: 15px;
     margin-bottom: 16px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.4s
+    cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(138, 43, 226, 0.05);
+    border-color: rgba(138, 43, 226, 0.2);
+    color: $primary-cyan;
 
     &:hover {
-      background-color: #249142;
+      transform: translateY(-2px);
     }
   }
 }

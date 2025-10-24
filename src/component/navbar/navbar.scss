@@ -1,21 +1,515 @@
+////@import "../../sass/_variables.scss";
+////
+////header {
+////  flex: 0 0 220px;
+////  width: 220px;
+////  padding: 0 10px; // փոքրացրու padding
+////  overflow: hidden;
+////  background: linear-gradient(180deg, rgba(10, 31, 46, 0.95) 0%, rgba(5, 18, 25, 0.95) 100%);
+////  backdrop-filter: blur(20px);
+////  border-right: 1px solid rgba(0, 255, 255, 0.1);
+////  position: relative;
+////
+////  &::before {
+////    content: '';
+////    position: absolute;
+////    top: 0;
+////    right: 0;
+////    width: 1px;
+////    height: 100%;
+////    background: linear-gradient(180deg, transparent, var(--primary-cyan), transparent);
+////    animation: borderFlow 3s linear infinite;
+////  }
+////
+////  @keyframes borderFlow {
+////    0% { transform: translateY(-100%); }
+////    100% { transform: translateY(100%); }
+////  }
+////  .nav-bar {
+////    margin-top: 20px;
+////
+////    .logo {
+////      display: flex;
+////      align-items: center;
+////      gap: 20px;
+////
+////      .logo-icon {
+////        color: $title-color;
+////        font-size: 25px;
+////      }
+////    }
+////
+////    h3 {
+////      color: white;
+////    }
+////
+////    ul {
+////      display: flex;
+////      flex-direction: column;
+////      justify-content: center;
+////      align-items: flex-start;
+////      height: 300px;
+////
+////
+////
+////      li {
+////        list-style: none;
+////        height: 40px;
+////        &::before {
+////          content: '';
+////          position: absolute;
+////          left: 0;
+////          top: 0;
+////          width: 0;
+////          height: 100%;
+////          background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), transparent);
+////          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+////          border-radius: 12px;
+////          z-index: -1;
+////        }
+////
+////        &:hover {
+////          color: #fff;
+////          transform: translateX(5px);
+////        }
+////
+////        &:hover::before {
+////          width: 100%;
+////        }
+////
+////        &.active {
+////          background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.05));
+////          color: var(--primary-cyan);
+////          border-left: 3px solid var(--primary-cyan);
+////          box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+////        }
+////
+////        a {
+////          display: flex;
+////          align-items: center;
+////          gap: 10px;
+////          color: $text-color;
+////          text-decoration: none;
+////
+////          .nav-icon {
+////            font-size: 20px;
+////          }
+////        }
+////      }
+////    }
+////  }
+////
+////}
+////
+////@media (max-width: 700px) {
+////  header {
+////
+////    flex: 0 0 auto;
+////    height: 50px;
+////
+////    .nav-bar {
+////      .logo {
+////        display: none;
+////      }
+////
+////      ul {
+////        display: flex;
+////        flex-direction: row;
+////        justify-content: space-between;
+////        align-items: center;
+////        height: auto;
+////        li:nth-child(2) {
+////        display: none;
+////      }
+////
+////        li {
+////          a {
+////            flex-direction: column;
+////            font-size: 10px;
+////
+////            .nav-icon {
+////              font-size: 25px;
+////            }
+////          }
+////        }
+////      }
+////    }
+////  }
+////}
+////
+////
+////
+//
+//
+//@import "../../sass/_variables.scss";
+//
+//header {
+//  --primary-cyan: #00ffff;
+//
+//  flex: 0 0 auto;
+//  width: 220px;
+//  padding: 0 10px;
+//  overflow: hidden;
+//  background: linear-gradient(180deg, rgba(10, 31, 46, 0.95) 0%, rgba(5, 18, 25, 0.95) 100%);
+//  backdrop-filter: blur(20px);
+//  border-right: 1px solid rgba(0, 255, 255, 0.1);
+//  position: relative;
+//  min-height: 100vh;
+//
+//  &::before {
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    right: 0;
+//    width: 1px;
+//    height: 100%;
+//    background: linear-gradient(180deg, transparent, var(--primary-cyan), transparent);
+//    animation: borderFlow 3s linear infinite;
+//  }
+//
+//  @keyframes borderFlow {
+//    0% { transform: translateY(-100%); }
+//    100% { transform: translateY(100%); }
+//  }
+//
+//  .nav-bar {
+//    margin-top: 20px;
+//
+//    .logo {
+//      display: flex;
+//      align-items: center;
+//      gap: 20px;
+//
+//      .logo-icon {
+//        color: var(--primary-cyan); // Fallback
+//        font-size: 25px;
+//      }
+//    }
+//
+//    h3 {
+//      color: white;
+//    }
+//
+//    ul {
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//      align-items: flex-start;
+//      height: 300px;
+//      padding: 0;
+//      margin: 0;
+//
+//      li {
+//        list-style: none;
+//        height: 40px;
+//        width: 100%;
+//        position: relative;
+//        transition: all 0.3s ease;
+//
+//        &::before {
+//          content: '';
+//          position: absolute;
+//          left: 0;
+//          top: 0;
+//          width: 0;
+//          height: 100%;
+//          background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), transparent);
+//          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//          border-radius: 12px;
+//          z-index: -1;
+//        }
+//
+//        &:hover {
+//          transform: translateX(5px);
+//
+//          &::before {
+//            width: 100%;
+//          }
+//
+//          a {
+//            color: #fff;
+//          }
+//        }
+//
+//        &.active {
+//          background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.05));
+//          border-left: 3px solid var(--primary-cyan);
+//          box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+//
+//          a {
+//            color: var(--primary-cyan);
+//          }
+//        }
+//
+//        a {
+//          display: flex;
+//          align-items: center;
+//          gap: 10px;
+//          color: #ccc; // Fallback
+//          text-decoration: none;
+//          padding: 10px 15px;
+//          width: 100%;
+//          height: 100%;
+//          transition: all 0.3s ease;
+//
+//          .nav-icon {
+//            font-size: 20px;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//@media (max-width: 700px) {
+//  header {
+//    flex: 0 0 auto;
+//    width: 100%;
+//    height: 60px;
+//    padding: 0 5px;
+//    border-right: none;
+//    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+//
+//    &::before {
+//      display: none;
+//    }
+//
+//    .nav-bar {
+//      margin-top: 0;
+//      height: 100%;
+//
+//      .logo {
+//        display: none;
+//      }
+//
+//      ul {
+//        flex-direction: row;
+//        justify-content: space-around;
+//        height: 100%;
+//        gap: 0;
+//
+//        li {
+//          height: 100%;
+//          flex: 1;
+//          display: flex;
+//          align-items: center;
+//          justify-content: center;
+//
+//          &:hover {
+//            transform: translateY(-2px);
+//          }
+//
+//          &.active {
+//            border-left: none;
+//            border-bottom: 3px solid var(--primary-cyan);
+//          }
+//
+//          a {
+//            flex-direction: column;
+//            font-size: 10px;
+//            padding: 5px;
+//            text-align: center;
+//
+//            .nav-icon {
+//              font-size: 20px;
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+
 @import "../../sass/_variables.scss";
 
-.nav-bar{
-  ul{
+header {
+  --primary-cyan: #00ffff;
+
+  flex: 0 0 220px; // Desktop-ի համար
+  width: 220px;
+  min-height: 100vh; // Լրացնում է ամբողջ բարձրությունը
+  padding: 0 10px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(10, 31, 46, 0.95) 0%, rgba(5, 18, 25, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(0, 255, 255, 0.1);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--primary-cyan), transparent);
+    animation: borderFlow 3s linear infinite;
+  }
+
+  @keyframes borderFlow {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+
+  .nav-bar {
+    margin-top: 20px;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    li{
-      list-style: none;
-      a{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    flex-direction: column;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .logo-icon {
+        color: $title-color;
+        font-size: 25px;
+      }
+    }
+
+    h3 {
+      color: white;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex: 1; // Լրացնում է մնացած տարածքը
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        height: 40px;
+        width: 100%;
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), transparent);
+          transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border-radius: 12px;
+          z-index: -1;
+        }
+
+        &:hover {
+          transform: translateX(5px);
+
+          &::before {
+            width: 100%;
+          }
+
+          a {
+            color: #fff;
+          }
+        }
+
+        &.active {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.05));
+          border-left: 3px solid var(--primary-cyan);
+          box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+
+          a {
+            color: var(--primary-cyan);
+          }
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #ccc;
+          text-decoration: none;
+          padding: 10px 15px;
+          width: 100%;
+          height: 100%;
+          transition: all 0.3s ease;
+
+          .nav-icon {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex: 0 0 auto !important; // Կարևոր է !important
+    width: 100% !important;
+    height: 60px !important;
+    min-height: auto !important; // Հեռացնում է 100vh-ը
+    padding: 0 5px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+
+    &::before {
+      display: none;
+    }
+
+    .nav-bar {
+      margin-top: 0;
+      height: 100%;
+      flex-direction: row;
+      align-items: center;
+
+      .logo {
+        display: none;
+      }
+
+      h3 {
+        display: none;
+      }
+
+      ul {
+        flex-direction: row;
+        justify-content: space-around;
         align-items: center;
-        text-decoration: none;
-        color:$text-color;
-        .nav-icon{
-          font-size: 25px;
+        height: 100%;
+        width: 100%;
+        gap: 0;
+        flex: none;
+
+        li {
+          height: 100%;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          &.active {
+            border-left: none;
+            border-bottom: 3px solid var(--primary-cyan);
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05));
+          }
+
+          a {
+            flex-direction: column;
+            font-size: 10px;
+            padding: 5px;
+            text-align: center;
+            justify-content: center;
+            gap: 2px;
+
+            .nav-icon {
+              font-size: 18px;
+            }
+          }
         }
       }
     }

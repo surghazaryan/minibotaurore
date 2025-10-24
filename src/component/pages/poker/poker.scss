@@ -1,11 +1,13 @@
 @import "../../../sass/_variables.scss";
 
 .card {
-  background-color: #1f1f2d;
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   .title {
     font-weight: bold;
@@ -19,7 +21,7 @@
     margin-bottom: 6px;
 
     .label {
-      color: #aaa;
+      color: $primary-cyan;
       font-size: 14px;
     }
 
@@ -30,26 +32,21 @@
     }
 
     .green {
-      color: $title-color;
+      color: $primary-cyan;
     }
   }
 
   .button {
     display: block;
     width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 12px;
-    background-color: #1e7e34;
-    border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    color: #fff;
-    transition: background 0.3s;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
 
     &:hover {
-      background-color: #155d27;
+      border-color: $primary-cyan;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
     }
 
     @media (min-width: 700px) {
@@ -66,15 +63,15 @@
 
     button {
       width: 100%;
-      padding: 10px 0;
-      margin-top: 12px;
-      background-color: #1e7e34;
-      border-radius: 8px;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      color: #fff;
-      transition: background 0.3s;
+      background: linear-gradient(135deg, rgba(0, 50, 50, 0.2), rgba(50, 0, 50, 0.2));
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.6s
+      ease 0.4s both;
     }
   }
 
@@ -90,6 +87,7 @@
         display: flex;
         gap: 5px;
         align-items: center;
+        cursor:pointer;
       }
     }
 
@@ -100,14 +98,48 @@
       gap: 5px;
       button {
         width: 100%;
-        padding: 10px 0;
-        margin-top: 12px;
-        background-color: #1e7e34;
-        border-radius: 8px;
-        border: none;
-        font-weight: bold;
+        padding: 14px;
+        background: rgba(0, 255, 255, 0.05);
+        border: 2px solid rgba(0, 255, 255, 0.2);
+        border-radius: 12px;
+        color: var(--primary-cyan);
         cursor: pointer;
-        color: #fff;
+        transition: all 0.3s
+        cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 15px;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: radial-gradient(circle, rgba(0, 255, 255, 0.3), transparent);
+          transform: translate(-50%, -50%);
+          transition: width 0.4s ease, height 0.4s ease;
+          border-radius: 50%;
+        }
+
+        &:hover::before {
+          width: 200px;
+          height: 200px;
+        }
+
+      &:hover {
+          border-color: $primary-cyan;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        &.active {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+          border-color: var(--primary-cyan);
+          box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+        }
       }
     }
   }
@@ -115,9 +147,26 @@
 
 .popular-rooms{
   h2{
-    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, var(--primary-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 8px;
   }
-  .card{
+  .popular-rooms-card{
+    background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover{
+      border-color: rgba(138, 43, 226, 0.8);
+      box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
     .content-rooms{
       display: flex;
       justify-content: space-between;
@@ -126,23 +175,59 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        p{
+          font-size: 18px;
+          color: $primary-cyan;
+          font-weight: 700;
+          text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
         .poker{
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: 50px;
           height: 50px;
-          background-color: #9f6464;
+          background-image: linear-gradient(#42258d, #6e55c9);
           border-radius: 50%;
+
         }
 
       }
       .play button{
-        padding: 10px 20px;
-        background: #1e7e34;
-        color: $text-color;
-        border: none;
-        border-radius: 5px;
+        padding: 14px 40px;
+        background: transparent;
+        border: 2px solid $primary-cyan;
+        border-radius: 12px;
+        color: $primary-cyan;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.4s
+        cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+          transition: left 0.6s ease;
+        }
+
+        &:hover::before {
+          left: 100%;
+        }
+
+        &:hover {
+          background: rgba(0, 255, 255, 0.15);
+          box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
+          transform: translateY(-2px);
+        }
       }
     }
   }
@@ -164,11 +249,12 @@
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    color: #8a94a6;
+    color: $primary-cyan;
   }
   .online-count {
     font-size: 14px;
-    color: #14c57c;
+    color: $primary-cyan;
+
   }
 
   .propoker1 {
@@ -181,7 +267,7 @@
   .filpoker1 {
     width: 40%;
     height: 100%;
-    background-color: #14c57c;
+    background-image: linear-gradient(#42258d, #6e55c9);
     border-radius: 3px;
   }
   .propoker{
@@ -194,8 +280,23 @@
   .filpoker{
     width: 90%;
     height: 100%;
-    background-color: #14c57c;
+    background-image: linear-gradient(#42258d, #6e55c9);
     border-radius: 3px;
   }
 }
+
+.pokerDescription>*{
+  margin: 10px 0;
+  h2{
+    color: #1e7e34;
+  }
+  h4{
+    color:#ffffff;
+    margin-bottom: 5px;
+  }
+  p{
+    font-size: 12px;
+  }
+}
+
 

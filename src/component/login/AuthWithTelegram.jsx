@@ -88,17 +88,17 @@
 // export default AuthWithTelegram;
 
 
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { motion } from 'framer-motion';
-import { Loader2 } from 'lucide-react';
+import {motion} from 'framer-motion';
+import {Loader2} from 'lucide-react';
 import WebApp from '@twa-dev/sdk';
 import "./login.scss"
 
 const AuthWithTelegram = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const [payload, setPayload] = useState(null);
 
     useEffect(() => {
         const authenticate = async () => {
@@ -114,9 +114,10 @@ const AuthWithTelegram = () => {
                 initData: WebApp.initData,
                 userData: unsafeData.user,
             };
+            setPayload(newPayload);
 
             try {
-                const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload);
+                const res = await axios.post('https://your-api-domain.com/api/auth/telegram', newPayload, {withCredentials: true});
 
 
             } catch (err) {
@@ -135,10 +136,10 @@ const AuthWithTelegram = () => {
             <div className="auth-loader">
                 <motion.div
                     className="loader-icon"
-                    animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
+                    animate={{rotate: 360}}
+                    transition={{repeat: Infinity, duration: 1.5, ease: "linear"}}
                 >
-                    <Loader2 size={60} />
+                    <Loader2 size={60}/>
                 </motion.div>
                 <p className="loader-text">Please Wait...</p>
             </div>
@@ -149,7 +150,14 @@ const AuthWithTelegram = () => {
         return <div className="error">{error}</div>;
     }
 
-    return null;
+    return (
+        <div>
+            <h2>Telegram Init Data Payload</h2>
+            <pre style={{color:"white"}}>
+               {JSON.stringify(payload, null, 2)}
+            </pre>
+        </div>
+    );
 };
 
 export default AuthWithTelegram;

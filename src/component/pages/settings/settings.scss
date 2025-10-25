@@ -2,18 +2,18 @@
 
 .content-settings {
   margin-top: 20px;
+  margin-bottom: 80px;
 
+  .setting-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.setting-title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h3 {
-    color: $title-color;
-    margin-bottom: 10px;
+    h3 {
+      color: $title-color;
+      margin-bottom: 10px;
+    }
   }
-}
 
   .content-user {
     .info-user {
@@ -28,8 +28,8 @@
       border-radius: 20px;
       padding: 30px;
       margin-bottom: 20px;
-      transition: all 0.4s
-      cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
       .title-user {
         display: flex;
         justify-content: center;
@@ -75,8 +75,7 @@
       border-radius: 20px;
       padding: 30px;
       margin-bottom: 20px;
-      transition: all 0.4s
-      cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       margin-top: 20px;
 
 
@@ -97,8 +96,7 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        transition: all 0.4s
-        cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
         text-transform: uppercase;
@@ -114,12 +112,13 @@
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 20px;
-    transition: all 0.4s
-    cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: 20px;
-h3{
-  color: $primary-cyan;
-}
+
+    h3 {
+      color: $primary-cyan;
+    }
+
     &.disabled {
       opacity: 0.5;
       border-color: #f0f0f0;
@@ -152,8 +151,7 @@ h3{
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: all 0.4s
-    cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
@@ -255,3 +253,8 @@ h3{
   background-color: #1e7e34;
 }
 
+@media (max-width: 700px) {
+  .content-settings {
+    padding: 20px;
+  }
+}

@@ -13,7 +13,7 @@ const Wallet = () => {
             <div className="size_container">
                 <div className="wallet-content">
                     <div className="wallet-title">
-                        <h3>{t.wallet}</h3>
+                        {/*<h3>{t.wallet}</h3>*/}
                        <BalanceHeader/>
                     </div>
                     <div className="wallet-balance">

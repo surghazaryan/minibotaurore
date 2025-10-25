@@ -9,7 +9,7 @@ const {t} = useContext(LanguageContext);
             <div className="size_container">
                 <div className="content-history">
                     <div className="history-title">
-                        <h3>{t.historyTitle}</h3>
+                        {/*<h3>{t.historyTitle}</h3>*/}
                         <BalanceHeader/>
                     </div>
                     <div className="history-card">

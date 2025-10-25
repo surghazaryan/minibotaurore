@@ -40,7 +40,7 @@ const Referrals = () => {
            <div className="size_container">
                <div className="referrals-page">
                    <div className="referrals-title">
-                       <h3>{t.referrals}</h3>
+                       {/*<h3>{t.referrals}</h3>*/}
                        <BalanceHeader/>
                    </div>
 

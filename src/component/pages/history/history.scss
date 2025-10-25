@@ -44,3 +44,9 @@
 .card-history-sum:nth-child(even) h5 {
   color: #dc3545;
 }
+
+@media (max-width: 700px) {
+  .content-history{
+    padding: 20px;
+  }
+}

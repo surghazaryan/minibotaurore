@@ -1,6 +1,7 @@
 @import "../../../sass/_variables.scss";
 
 .wallet-content {
+  margin-bottom: 80px;
   h3 {
     color: $title-color;
     margin-bottom: 6px;
@@ -20,6 +21,7 @@
     margin-bottom: 40px;
     border: 1px solid rgba(0, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
 
     p:nth-child(1) {
       color: $primary-cyan;
@@ -70,6 +72,7 @@
     margin-bottom: 20px;
     transition: all 0.4s
     cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 10px;
     p{
       color: $text-color;
       font-weight: bold;
@@ -153,4 +156,11 @@
       }
     }
   }
+}
+
+@media (max-width: 700px) {
+  .wallet-content {
+    padding: 20px;
+  }
+
 }

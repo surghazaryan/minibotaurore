@@ -33,7 +33,7 @@ const Tournament = () => {
                <section className={"section-tournament"}>
                    <div className={"tournament-title"}>
                      <div>
-                         <h3>{t.tournaments}</h3>
+                         {/*<h3>{t.tournaments}</h3>*/}
                      </div>
                        <BalanceHeader/>
                    </div>

@@ -19,7 +19,7 @@ const ProfileSettings = () => {
         <div className="size_container">
             <div className="content-settings">
                 <div className="setting-title">
-                    <h3>{t.profileSettings}</h3>
+                    {/*<h3>{t.profileSettings}</h3>*/}
                     <BalanceHeader/>
                 </div>
 
@@ -34,13 +34,6 @@ const ProfileSettings = () => {
                         </div>
 
                         <div className="btn-lng">
-                            <button
-                                onClick={() => setLng("hy")}
-                                className={lng === "hy" ? "active" : ""}
-                            >
-                                <p>Hy</p>
-                                <img src={am} alt="armenia" />
-                            </button>
                             <button
                                 onClick={() => setLng("ru")}
                                 className={lng === "ru" ? "active" : ""}

@@ -39,7 +39,7 @@ const Home = () => {
                 <main>
                     <div className="home-title">
                        <div>
-                           <h3>{t.homeTitle}</h3>
+                           {/*<h3>{t.homeTitle}</h3>*/}
                            <hr />
                        </div>
                       <BalanceHeader/>

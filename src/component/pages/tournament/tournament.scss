@@ -2,17 +2,19 @@
 
 
 .section-tournament {
-  h3{
+  h3 {
     color: $title-color;
   }
-  .tournament-title{
+
+  .tournament-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
   }
+
   .container-tournament {
-    margin-top: 30px;
+    margin-bottom: 80px;
     font-family: 'Arial', sans-serif;
     color: #fff;
 
@@ -30,8 +32,7 @@
         border: 2px solid rgba(0, 255, 255, 0.2);
         border-radius: 16px;
         cursor: pointer;
-        transition: all 0.4s
-        cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         font-size: 18px;
         font-weight: 600;
         position: relative;
@@ -51,5 +52,9 @@
 
 }
 
-
+@media (max-width: 700px) {
+  .section-tournament {
+    padding: 20px;
+  }
+}
 

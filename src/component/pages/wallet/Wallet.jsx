@@ -18,7 +18,7 @@ const Wallet = () => {
                     </div>
                     <div className="wallet-balance">
                         <p>{t.yourBalance}</p>
-                        <p>200000 USDT</p>
+                        <p>200$</p>
                     </div>
                     <div className="wallet-btn">
                         <button className={visible === "replenish" ? "active" : ""}

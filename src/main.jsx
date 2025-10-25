@@ -8,9 +8,7 @@ import LngProviderContext from "./context/LngProviderContext.jsx";
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <LngProviderContext>
-
                 <App/>
-
         </LngProviderContext>
     </StrictMode>,
 )

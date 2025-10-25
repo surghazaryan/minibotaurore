@@ -8,7 +8,7 @@ const ru = {
     //home
     homeTitle: "Главная",
     yourBalance: "Ваш баланс",
-    balanceAmount: "1000 USDT",
+    balanceAmount: "1000$",
     deposit: "Пополнить",
     withdraw: "Вывести",
     poker: "Покер",

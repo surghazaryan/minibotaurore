@@ -1,14 +1,351 @@
+//
+//
+//@import "../../../sass/_variables.scss";
+//
+//.card {
+//  background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+//  border: 2px solid rgba(138, 43, 226, 0.3);
+//  border-radius: 20px;
+//  padding: 30px;
+//  margin-bottom: 20px;
+//  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//
+//  .title {
+//    font-weight: bold;
+//    font-size: 16px;
+//    margin-bottom: 12px;
+//  }
+//
+//  .info {
+//    display: flex;
+//    justify-content: space-between;
+//    margin-bottom: 6px;
+//
+//    .label {
+//      color: $primary-cyan;
+//      font-size: 14px;
+//    }
+//
+//    .value {
+//      color: $text-color;
+//      font-weight: bold;
+//      font-size: 14px;
+//    }
+//
+//    .green {
+//      color: $primary-cyan;
+//    }
+//  }
+//
+//  .button {
+//    display: block;
+//    width: 100%;
+//    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+//    border-color: var(--primary-cyan);
+//    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+//
+//    &:hover {
+//      border-color: $primary-cyan;
+//      transform: translateY(-2px);
+//      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+//    }
+//
+//    @media (min-width: 700px) {
+//      button {
+//        flex: 1 1 calc(50% - 4px);
+//      }
+//    }
+//  }
+//
+//  .rooms-btn {
+//    display: flex;
+//    justify-content: space-between;
+//    gap: 10px;
+//
+//    button {
+//      width: 100%;
+//      background: linear-gradient(135deg, rgba(0, 50, 50, 0.2), rgba(50, 0, 50, 0.2));
+//      backdrop-filter: blur(10px);
+//      padding: 30px;
+//      border-radius: 20px;
+//      margin-bottom: 40px;
+//      border: 1px solid rgba(0, 255, 255, 0.1);
+//      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+//      animation: fadeIn 0.6s ease 0.4s both; // <-- սեմիքոլոն ուղղված
+//    }
+//  }
+//
+//  .search-rates {
+//    margin-top: 10px;
+//
+//    .rates-info {
+//      display: flex;
+//      justify-content: space-between;
+//      align-items: center;
+//
+//      p {
+//        display: flex;
+//        gap: 5px;
+//        align-items: center;
+//        cursor: pointer;
+//        margin: 0;
+//      }
+//    }
+//
+//    .rates-category {
+//      display: flex;
+//      justify-content: space-between;
+//      align-items: center;
+//      gap: 5px;
+//
+//      button {
+//        width: 100%;
+//        background: rgba(0, 255, 255, 0.05);
+//        border: 2px solid rgba(0, 255, 255, 0.2);
+//        border-radius: 12px;
+//        color: var(--primary-cyan);
+//        cursor: pointer;
+//        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//        font-size: 15px;
+//        font-weight: 600;
+//        position: relative;
+//        overflow: hidden;
+//
+//        &::before {
+//          content: '';
+//          position: absolute;
+//          top: 50%;
+//          left: 50%;
+//          width: 0;
+//          height: 0;
+//          background: radial-gradient(circle, rgba(0, 255, 255, 0.3), transparent);
+//          transform: translate(-50%, -50%);
+//          transition: width 0.4s ease, height 0.4s ease;
+//          border-radius: 50%;
+//        }
+//
+//        &:hover::before {
+//          width: 200px;
+//          height: 200px;
+//        }
+//
+//        &:hover {
+//          border-color: $primary-cyan;
+//          transform: translateY(-2px);
+//          box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+//        }
+//
+//        &.active {
+//          background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+//          border-color: var(--primary-cyan);
+//          box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//.popular-rooms {
+//  h2 {
+//    font-size: 28px;
+//    font-weight: 700;
+//    background: linear-gradient(135deg, #fff, var(--primary-cyan));
+//    -webkit-background-clip: text;
+//    background-clip: text;
+//    margin-bottom: 8px;
+//  }
+//
+//  .popular-rooms-card {
+//    background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
+//    border: 2px solid rgba(138, 43, 226, 0.3);
+//    border-radius: 20px;
+//    padding: 30px;
+//    margin-bottom: 20px;
+//    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//
+//
+//
+//
+//
+//    &:hover {
+//      border-color: rgba(138, 43, 226, 0.8);
+//      box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
+//      transform: translateY(-5px);
+//    }
+//
+//    .content-rooms {
+//      display: flex;
+//      justify-content: space-between;
+//      align-items: center;
+//
+//      .content-icon {
+//        display: flex;
+//
+//        gap: 10px;
+//
+//        p {
+//          font-size: 18px;
+//          color: $primary-cyan;
+//          font-weight: 700;
+//          text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+//          margin: 0;
+//        }
+//
+//        .poker {
+//          display: inline-flex;
+//          justify-content: center;
+//          align-items: center;
+//          width: 50px;
+//          height: 50px;
+//          background-image: linear-gradient(#42258d, #6e55c9);
+//          border-radius: 50%;
+//        }
+//      }
+//
+//      .play button {
+//        padding: 14px 40px;
+//        background: transparent;
+//        border: 2px solid $primary-cyan;
+//        border-radius: 12px;
+//        color: $primary-cyan;
+//        cursor: pointer;
+//        font-size: 16px;
+//        font-weight: 600;
+//        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+//        position: relative;
+//        overflow: hidden;
+//        text-transform: uppercase;
+//        letter-spacing: 1px;
+//
+//        &::before {
+//          content: '';
+//          position: absolute;
+//          top: 0;
+//          left: -100%;
+//          width: 100%;
+//          height: 100%;
+//          background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+//          transition: left 0.6s ease;
+//        }
+//
+//        &:hover::before {
+//          left: 100%;
+//        }
+//
+//        &:hover {
+//          background: rgba(0, 255, 255, 0.15);
+//          box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
+//          transform: translateY(-2px);
+//        }
+//      }
+//    }
+//  }
+//
+//  .game-details {
+//    display: flex;
+//    justify-content: space-between;
+//    align-items: center;
+//    margin-top: 10px;
+//  }
+//
+//  .players-info {
+//    display: flex;
+//    justify-content: space-between;
+//    gap: 5px;
+//  }
+//
+//  .players-count,
+//  .online-count {
+//    display: flex;
+//    align-items: center;
+//    gap: 5px;
+//    font-size: 14px;
+//    color: $primary-cyan;
+//  }
+//
+//  .propoker1,
+//  .propoker {
+//    width: 200px;
+//    height: 6px;
+//    background-color: #2a3147;
+//    border-radius: 3px;
+//    overflow: hidden;
+//  }
+//
+//  .filpoker1 {
+//    width: 40%;
+//    height: 100%;
+//    background-image: linear-gradient(#42258d, #6e55c9);
+//    border-radius: 3px;
+//  }
+//
+//  .filpoker {
+//    width: 90%;
+//    height: 100%;
+//    background-image: linear-gradient(#42258d, #6e55c9);
+//    border-radius: 3px;
+//  }
+//}
+//
+//.pokerDescription > * {
+//  margin: 10px 0;
+//
+//  h2 {
+//    color: #1e7e34;
+//  }
+//
+//  h4 {
+//    color: #ffffff;
+//    margin-bottom: 5px;
+//  }
+//
+//  p {
+//    font-size: 12px;
+//  }
+//}
+//
+//@media(max-width: 700px) {
+//  .popular-rooms-card {
+//    .content-icon {
+//      flex-direction: column;
+//      align-items: flex-start;
+//
+//
+//    }
+//  }
+//}
+//
+//
 @import "../../../sass/_variables.scss";
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
 
 .card {
   background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
-  backdrop-filter: blur(10px);
   border: 2px solid rgba(138, 43, 226, 0.3);
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 20px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
+  animation: fadeInUp 0.6s ease both;
 
   .title {
     font-weight: bold;
@@ -43,17 +380,12 @@
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
     border-color: var(--primary-cyan);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: all 0.4s ease;
 
     &:hover {
       border-color: $primary-cyan;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
-    }
-
-    @media (min-width: 700px) {
-      button {
-        flex: 1 1 calc(50% - 4px);
-      }
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(0, 255, 255, 0.4);
     }
   }
 
@@ -71,8 +403,7 @@
       margin-bottom: 40px;
       border: 1px solid rgba(0, 255, 255, 0.1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      animation: fadeIn 0.6s
-      ease 0.4s both;
+      animation: fadeInUp 0.6s ease 0.4s both;
     }
   }
 
@@ -88,7 +419,13 @@
         display: flex;
         gap: 5px;
         align-items: center;
-        cursor:pointer;
+        cursor: pointer;
+        margin: 0;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
 
@@ -97,16 +434,15 @@
       justify-content: space-between;
       align-items: center;
       gap: 5px;
+
       button {
         width: 100%;
-        padding: 14px;
         background: rgba(0, 255, 255, 0.05);
         border: 2px solid rgba(0, 255, 255, 0.2);
         border-radius: 12px;
         color: var(--primary-cyan);
         cursor: pointer;
-        transition: all 0.3s
-        cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         font-size: 15px;
         font-weight: 600;
         position: relative;
@@ -130,9 +466,9 @@
           height: 200px;
         }
 
-      &:hover {
+        &:hover {
           border-color: $primary-cyan;
-          transform: translateY(-2px);
+          transform: translateY(-2px) scale(1.03);
           box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
         }
 
@@ -146,43 +482,63 @@
   }
 }
 
-.popular-rooms{
-  h2{
+.popular-rooms {
+  h2 {
     font-size: 28px;
     font-weight: 700;
     background: linear-gradient(135deg, #fff, var(--primary-cyan));
     -webkit-background-clip: text;
     background-clip: text;
     margin-bottom: 8px;
+    animation: fadeInUp 0.6s ease both;
   }
-  .popular-rooms-card{
+
+  .popular-rooms-card {
     background: linear-gradient(135deg, rgba(26, 58, 74, 0.4), rgba(58, 26, 74, 0.4));
-    backdrop-filter: blur(10px);
     border: 2px solid rgba(138, 43, 226, 0.3);
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 20px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    &:hover{
+
+    /* Entrance animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    &:hover {
       border-color: rgba(138, 43, 226, 0.8);
       box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3), 0 0 20px rgba(0, 255, 255, 0.2);
       transform: translateY(-5px);
     }
-    .content-rooms{
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-rooms {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .content-icon{
+
+      .content-icon {
         display: flex;
-        align-items: center;
         gap: 10px;
-        p{
+
+        p {
           font-size: 18px;
           color: $primary-cyan;
           font-weight: 700;
           text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+          margin: 0;
         }
-        .poker{
+
+        .poker {
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -190,11 +546,11 @@
           height: 50px;
           background-image: linear-gradient(#42258d, #6e55c9);
           border-radius: 50%;
-
+          animation: fadeInUp 0.5s ease both;
         }
-
       }
-      .play button{
+
+      .play button {
         padding: 14px 40px;
         background: transparent;
         border: 2px solid $primary-cyan;
@@ -203,12 +559,11 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        transition: all 0.4s
-        cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
         text-transform: uppercase;
         letter-spacing: 1px;
+
         &::before {
           content: '';
           position: absolute;
@@ -217,21 +572,18 @@
           width: 100%;
           height: 100%;
           background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
-          transition: left 0.6s ease;
-        }
-
-        &:hover::before {
-          left: 100%;
+          animation: shine 1.2s linear infinite;
         }
 
         &:hover {
           background: rgba(0, 255, 255, 0.15);
           box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(0, 255, 255, 0.2);
-          transform: translateY(-2px);
+          transform: translateY(-2px) scale(1.03);
         }
       }
     }
   }
+
   .game-details {
     display: flex;
     justify-content: space-between;
@@ -245,59 +597,56 @@
     gap: 5px;
   }
 
-  .players-count {
+  .players-count,
+  .online-count {
     display: flex;
     align-items: center;
     gap: 5px;
     font-size: 14px;
     color: $primary-cyan;
-  }
-  .online-count {
-    font-size: 14px;
-    color: $primary-cyan;
-
+    animation: fadeInUp 0.5s ease both;
   }
 
-  .propoker1 {
+  .propoker1,
+  .propoker {
     width: 200px;
     height: 6px;
     background-color: #2a3147;
     border-radius: 3px;
     overflow: hidden;
-  }
-  .filpoker1 {
-    width: 40%;
-    height: 100%;
-    background-image: linear-gradient(#42258d, #6e55c9);
-    border-radius: 3px;
-  }
-  .propoker{
-    width: 200px;
-    height: 6px;
-    background-color: #2a3147;
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .filpoker{
-    width: 90%;
-    height: 100%;
-    background-image: linear-gradient(#42258d, #6e55c9);
-    border-radius: 3px;
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 3px;
+      background-image: linear-gradient(#42258d, #6e55c9);
+      animation: fadeInUp 1s ease both;
+      transition: width 1s ease;
+    }
   }
 }
 
-.pokerDescription>*{
+.pokerDescription > * {
   margin: 10px 0;
-  h2{
+
+  h2 {
     color: #1e7e34;
   }
-  h4{
-    color:#ffffff;
+
+  h4 {
+    color: #ffffff;
     margin-bottom: 5px;
   }
-  p{
+
+  p {
     font-size: 12px;
   }
 }
 
-
+@media(max-width: 700px) {
+  .popular-rooms-card {
+    .content-icon {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

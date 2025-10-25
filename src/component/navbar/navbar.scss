@@ -324,9 +324,9 @@
 
 header {
   --primary-cyan: #00ffff;
-  flex: 0 0 220px; // Desktop-ի համար
-  width: 220px;
-  min-height: 100vh; // Լրացնում է ամբողջ բարձրությունը
+  flex: 0 0 260px;
+  width: 260px;
+  min-height: 100vh;
   padding: 0 10px;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(10, 31, 46, 0.95) 0%, rgba(5, 18, 25, 0.95) 100%);
@@ -366,6 +366,7 @@ header {
         color: $primary-cyan;
         font-size: 25px;
       }
+
     }
 
     h3 {

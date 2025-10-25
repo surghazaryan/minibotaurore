@@ -9,7 +9,7 @@ const en = {
     //home page
     homeTitle: "Home",
     yourBalance: "Your balance",
-    balanceAmount: "1000 USDT",
+    balanceAmount: "200$",
     deposit: "Deposit",
     withdraw: "Withdraw",
     poker: "Poker",

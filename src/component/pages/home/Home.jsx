@@ -8,7 +8,7 @@ import Blot from "../blot/Blot.jsx";
 import Poker from "../poker/Poker.jsx";
 import {LanguageContext} from "../../../context/LngProviderContext.jsx";
 import BalanceHeader from "../../balanceHeader/BalanceHeader.jsx";
-
+import imgCard from "../../../assets/images/1.png"
 
 const Home = () => {
     const [selectedGame, setSelectedGame] = useState(null);
@@ -46,12 +46,17 @@ const Home = () => {
                     </div>
                     <section className={"balance-section"}>
                         <div className="balance-content">
-                            <p>{t.yourBalance}</p>
-                            <h4>{t.balanceAmount}</h4>
-                            <Link>
-                                <button>{t.deposit}</button>
-                                <button>{t.withdraw}</button>
-                            </Link>
+                           <div>
+                               <p>{t.yourBalance}</p>
+                               <h4>{t.balanceAmount}</h4>
+                           </div>
+                            <div>
+                                <img src={imgCard} alt=""/>
+                            </div>
+                            {/*<Link>*/}
+                            {/*    <button>{t.deposit}</button>*/}
+                            {/*    <button>{t.withdraw}</button>*/}
+                            {/*</Link>*/}
                         </div>
                     </section>
                     <section className={"section-category"}>

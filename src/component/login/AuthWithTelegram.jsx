@@ -163,14 +163,16 @@
 // export default AuthWithTelegram;
 
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import WebApp from '@twa-dev/sdk';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
+import {ROUTES} from "../routes/index.js";
 
 const AuthWithTelegram = () => {
     const [error, setError] = useState(null); // error state
     const [success, setSuccess] = useState(null); // հաջողություն debug
-
+    const navigate = useNavigate();
     const handleTelegram = async () => {
         const unsafeData = WebApp.initDataUnsafe;
         if (!unsafeData || !unsafeData.user) {
@@ -188,6 +190,9 @@ const AuthWithTelegram = () => {
                 'https://undeclaimed-nonscheduled-jarrod.ngrok-free.dev/api/auth/telegram/callback',
                 newPayload
             );
+            if (res.data.token) {
+                navigate(ROUTES.HOME)
+            }
             console.log('Response:', res.data);
             setSuccess(res.data); // վիզուալիզացիա debug-ի համար
         } catch (err) {
@@ -208,13 +213,13 @@ const AuthWithTelegram = () => {
             <button onClick={handleTelegram}>Authenticate with Telegram</button>
 
             {error && (
-                <div style={{ color: 'red', marginTop: '10px' }}>
+                <div style={{color: 'red', marginTop: '10px'}}>
                     <strong>Error:</strong> {error}
                 </div>
             )}
 
             {success && (
-                <div style={{ color: 'green', marginTop: '10px' }}>
+                <div style={{color: 'green', marginTop: '10px'}}>
                     <strong>Success:</strong>
                     <pre>{JSON.stringify(success, null, 2)}</pre>
                 </div>

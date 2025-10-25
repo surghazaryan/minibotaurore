@@ -117,7 +117,7 @@ const AuthWithTelegram = () => {
             setPayload(newPayload);
 
             try {
-                const res = await axios.post( 'https://undeclaimed-nonscheduled-jarrod.ngrok-free.dev/api/auth/telegram', newPayload, {withCredentials: true});
+                const res = await axios.post( 'https://undeclaimed-nonscheduled-jarrod.ngrok-free.dev/api/auth/telegram/callback', newPayload, {withCredentials: true});
 
 
             } catch (err) {
